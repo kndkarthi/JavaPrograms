@@ -1,0 +1,204 @@
+max heap binary tree property:
+
+The value at teach node is >= the value of its children.
+
+complete binary tree property:
+
+The tree is a complete binary tree; that is, all levels of the tree, 
+except possibly the last one (deepest) are fully filled, and, 
+if the last level of the tree is not complete, 
+the nodes of that level are filled from left to right.
+(each node has at most 2 children)
+
+New value goes in, or value comes out.
+
+When removing, always remove the maximum value.
+
+When inserting, have to maintain the max heap binary property.
+
+
+42, 12, 28, 53, 11, 32, 23
+
+
+
+Values being inserted randomly.  Violate max heap property initially,
+then establish it.
+
+42, 12, 18 works.  52 as a child of 12 does not.  So swap the values.
+
+
+               42
+           12      28
+        53
+
+The above becomes
+
+               42
+           53      28
+        12
+
+This is still not proper.  53 and 42 must be swapped.
+
+
+               53
+           42       28
+       12
+
+These processes are called "bubbling up" or "swim"
+Adding values, it goes in left to right on the bottom level.
+
+              53
+         42       28
+     12      11
+
+then...
+
+              53
+         42        28
+       12  11   32   
+
+then swap 32 and 28
+
+              53
+         42        32
+      12    11   28
+
+then add last value 23...
+
+             53
+        42        32
+      12  11    28  23
+
+
+
+
+REMOVING FROM THE TREE............
+
+Now, as we shrink the tree, we have to remove children right to left on the bottom level.
+
+Prefer to preserve complete binary tree property first, instead of max heap property.
+
+We get rid of 53 and replace it with the first value we can... the child on the bottom right.. 23
+
+             23
+        42         32
+    12     11    28
+
+Now we have to swap 42 and 23.
+
+             42
+         23       32
+      12    11  28
+
+Putting 23 down here might affect one of the children (12 or 11) if it were 25,
+we would then swap 25 and 23.  As it is, its fine.
+
+
+
+
+
+
+
+15, 20, 25, 30, 5, 8, 10, 2, 16.
+
+
+                                         15
+
+
+
+
+
+
+
+                                         20
+                                  15
+
+
+
+
+
+                                         25
+                                  15           20
+                             
+
+
+
+
+
+
+
+
+
+
+                                         30
+                                   25           20
+                              15
+
+
+
+
+
+
+
+                                         30
+                                   25          20
+                               15     5
+
+
+
+                                   
+
+
+
+
+                                           30
+                                    25            20
+                               15       5      8
+
+
+
+
+
+
+
+
+                                             30
+                                      25            20
+                                  15      5       8    10
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                               30
+                                        25            20
+                                    15      5       8    10
+                                 2 
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                               
+                                               30
+                                        25            20
+                                    16      5       8    10
+                                 2     15
+ 
+ 
