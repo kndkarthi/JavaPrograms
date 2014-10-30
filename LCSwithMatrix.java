@@ -1,11 +1,14 @@
 package WarmUp;
 
+// Terry Schmidt, October 2014
+
 public class LCSwithMatrix {
 	
-    static int firstStringLength = 0;
-    static int secondStringLength = 0;
+    static int firstStringLength;
+    static int secondStringLength;
     static int[][] stringMatrix;
     static int counter = 0;
+    static String LCSaccumulator;
     
 	    public static void main(String[] args) {
 	    	System.out.print("Please enter the first string: ");
@@ -22,7 +25,7 @@ public class LCSwithMatrix {
 	       // [0][0] [0][1] [0][2] ... [1][length-1]
 	       // [0][0] [0][1] [0][2] ... [2][length-1]
 
-	       String LCSaccumulator = "";
+	       LCSaccumulator = "";
 	       
 	        		// Figure out the LCS and its length
 	        		for (int i = firstStringLength - 1; i >= 0; i--) {
@@ -50,23 +53,23 @@ public class LCSwithMatrix {
 	        System.out.print("The LCS is: " + LCSaccumulator);
 	    }
 	    
-	    
+	    //matrix to help visualize what's going on
 	    	public static void printMatrix() {
 	    				System.out.println("");
 	    				System.out.print("    ");
-	    		for (int i = 0; i <firstStringLength + 1; i++) {
+	    		for (int i = 0; i < firstStringLength + 1; i++) {
 	    				System.out.format("%3s",i);
 	    		}
 	    				System.out.println("");
 	    				System.out.print("    ");
-	    		for (int i = 0; i <firstStringLength + 1; i++) {
+	    		for (int i = 0; i < firstStringLength + 1; i++) {
 	    				System.out.format("%3s","--");
 	    		}
 	    				System.out.println("");
 
-	    		for (int i = 0; i <firstStringLength + 1; i++) {
+	    		for (int i = 0; i < firstStringLength + 1; i++) {
 	    				System.out.format("%2d| ",i);	            
-	    				for (int j = 0; j <secondStringLength + 1; j++) {
+	    				for (int j = 0; j < secondStringLength + 1; j++) {
 	    					System.out.format("%3d",stringMatrix[i][j]);
 	    				}
 	            		System.out.println();
