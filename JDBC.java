@@ -71,7 +71,8 @@ public class JDBC {
 		    	    	  System.out.print(VENDOR_ID + "              ");
 		    	      
 		    	      
-		    	      int spacesToAdd = 50 - VENDOR_NAME.length();
+		    	    	  // col2 width determined by meta data
+		    	      int spacesToAdd = column2precision - VENDOR_NAME.length();
 		    	      for(int i = 0; i < spacesToAdd; i++){
 		    	    	  VENDOR_NAME = VENDOR_NAME + " ";
 		    	      }
