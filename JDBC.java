@@ -17,7 +17,7 @@ public class JDBC {
 		    	Class.forName(JDBC_DRIVER);
 		    
 		    	System.out.println("Connecting to database...");
-		    	conn = DriverManager.getConnection(DB_URL, "tschmid4", "cdm1433009");
+		    	conn = DriverManager.getConnection(DB_URL, args[0], args[1]);
 		    	System.out.println("Connected...");
 		    	System.out.println("");
 		    
